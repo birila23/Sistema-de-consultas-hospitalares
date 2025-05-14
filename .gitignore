@@ -1,0 +1,7 @@
+# Ambientes virtuais
+venv/
+env/
+
+# Configurações e chaves secretas
+.env
+*.env
