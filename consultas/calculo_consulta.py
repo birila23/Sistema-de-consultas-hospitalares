@@ -11,7 +11,7 @@ def recalcular_horarios(data_consultas, inicio=time(8, 0), duracao=15):
 
     #ele já faz todas as consultas de uma vez 
     for consulta in fila:
-        consulta.horario_estimado = horario_atual.time
+        consulta.horario_estimado = horario_atual.time()
         consulta.save()
         horario_atual += timedelta(minutes=duracao)
 

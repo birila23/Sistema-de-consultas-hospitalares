@@ -6,4 +6,5 @@ from rest_framework import serializers
 class ConsultaSerializer(serializers.ModelSerializer): 
     class Meta:
         model = Consulta
-        fields = '__all__'
+        fields = ['id', 'data', 'descricao', 'horario_estimado', 'criado_em', 'paciente']
+        read_only_fields = ['id', 'horario_estimado', 'criado_em']

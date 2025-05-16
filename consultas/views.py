@@ -21,4 +21,4 @@ class ConsultaViewSet(viewsets.ModelViewSet):
         consulta = serializer.save(paciente=self.request.user)
 
         # Recalcula os horários para o dia dessa nova consulta
-        recalcular_horarios(consulta.data)
+        recalcular_horarios(data_consultas=consulta.data)
