@@ -1,10 +1,8 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ConsultaViewSet
 
-router = DefaultRouter()
-router.register(r'consultas', ConsultaViewSet, basename='consulta')
+from .views import ConsultaCreateView, ConsultaCreateViewUpDest
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('consultas/', ConsultaCreateView.as_view(), name='consultas'),
+    path('consultas/<int:pk>', ConsultaCreateViewUpDest.as_view(), name='consultass')
 ]
